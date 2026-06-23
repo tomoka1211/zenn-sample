@@ -19,18 +19,20 @@ Free版に入っているもの:
 | スキル | `research-brief` | テーマを調べて出典つきの要点に短時間でまとめる |
 
 ## 5分で動かす（クイックスタート）
-1. このフォルダの中の `.claude/` を、**あなたのプロジェクト直下にコピー**する
+1. このフォルダーの中の `.claude/` を、**あなたのプロジェクト直下にコピー**する
    ```
    your-project/
      └ .claude/
-         ├ agents/   (orchestrator.md, dev.md)
-         └ skills/   (research-brief.md)
+         ├ agents/    (orchestrator.md, dev.md)
+         ├ skills/    (research-brief/SKILL.md)
+         ├ hooks/     (block-external-actions.sh) ← 外向き操作を止めるガードレール
+         └ settings.json                          ← 上のフックを有効化する設定
    ```
 2. そのプロジェクトで Claude Code を開く
 3. 普通に話しかける:
    - 「今日やることを整理して」
-   - 「〇〇について調べてブリーフにして」 → `research-brief` が動く
-   - 「このバグ直して」 → `dev` が動く
+   - 「〇〇について調べてブリーフにして」→ `research-brief` が動く
+   - 「このバグ直して」→ `dev` が動く
 
 それだけです。エージェントは `.claude/agents/`、スキルは `.claude/skills/` に置くだけで認識されます。
 
